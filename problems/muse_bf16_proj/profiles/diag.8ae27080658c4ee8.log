@@ -1,0 +1,24 @@
+/opt/sglang/lib/python3.12/site-packages/torch/cuda/graphs.py:630: UserWarning: The CUDA Graph is empty. This usually means that the graph was attempted to be captured on wrong device or stream. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/cuda/CUDAGraph.cpp:249.)
+  super().capture_end_pre()
+empty graph 2.98
+qkv_gate m= 1 cublas  17.76 | plan (7, 0) exc=1288 comp=True | ours  19.78 | noRed  15.49 | bar  20.10 | clu  27.55 | bar3  25.73 | bar6  20.48
+qkv_gate m= 8 cublas  18.53 | plan (7, 0) exc=1288 comp=True | ours  21.15 | noRed  15.81 | bar  21.06 | clu  28.58 | bar3  26.14 | bar6  21.28
+qkv_gate m=16 cublas  18.34 | plan (7, 0) exc=1288 comp=True | ours  21.98 | noRed  16.16 | bar  22.11 | clu  29.92 | bar3  27.30 | bar6  22.24
+qkv_gate m=32 cublas  18.75 | plan (7, 0) exc=1288 comp=True | ours  24.93 | noRed  16.70 | bar  25.06 | clu  34.94 | bar3  31.33 | bar6  25.25
+o        m= 1 cublas  10.91 | plan (2, 2) exc=832 comp=True | ours  13.47 | noRed  11.20 | bar  15.23 | clu  13.54
+o        m= 8 cublas  10.66 | plan (2, 2) exc=832 comp=True | ours  14.21 | noRed  11.30 | bar  16.06 | clu  14.05
+o        m=16 cublas  10.69 | plan (2, 2) exc=832 comp=True | ours  15.17 | noRed  11.42 | bar  17.38 | clu  15.30
+o        m=32 cublas  10.91 | plan (2, 2) exc=832 comp=True | ours  17.76 | noRed  11.81 | bar  19.71 | clu  17.70
+pooler   m= 1 cublas  25.63 | plan (4, 0) exc=2293 comp=True | ours  26.18 | noRed  21.63 | bar  26.08 | clu  36.35 | bar2  32.93 | bar3  28.22
+pooler   m= 8 cublas  25.47 | plan (4, 0) exc=2293 comp=True | ours  26.75 | noRed  21.86 | bar  26.91 | clu  37.15 | bar2  33.54 | bar3  28.58
+pooler   m=16 cublas  25.25 | plan (4, 0) exc=2293 comp=True | ours  27.68 | noRed  22.18 | bar  27.81 | clu  38.50 | bar2  35.23 | bar3  30.05
+pooler   m=32 cublas  26.11 | plan (4, 0) exc=2293 comp=True | ours  30.72 | noRed  23.33 | bar  30.78 | clu  45.76 | bar2 ERR x slice does not fit in shared memory | bar3  33.92
+unpooler m= 1 cublas  11.58 | plan (16, 0) exc=3242 comp=True | ours  13.09 | noRed   8.99 | bar  12.99 | clu  16.19 | bar8  13.63 | bar15  13.31
+unpooler m= 8 cublas  11.39 | plan (16, 0) exc=3242 comp=True | ours  14.14 | noRed   9.02 | bar  14.14 | clu  17.95 | bar8  14.72 | bar15  14.62
+unpooler m=16 cublas  22.43 | plan (2, 2) exc=3242 comp=True | ours  25.31 | noRed  21.92 | bar  27.55 | clu  25.50
+unpooler m=32 cublas  22.59 | plan (2, 2) exc=3242 comp=True | ours  28.86 | noRed  23.14 | bar  31.20 | clu  28.61
+router   m= 1 cublas  15.55 | plan (66, 0) exc=0 comp=False | ours  12.90 | noRed   8.83 | bar  12.86 | bar33  13.02 | bar65  12.86
+router   m= 8 cublas  31.17 | plan (66, 0) exc=0 comp=False | ours  13.79 | noRed   8.86 | bar  13.82 | bar33  13.41 | bar65  13.82
+router   m=16 cublas  20.54 | plan (66, 0) exc=0 comp=False | ours  14.40 | noRed   9.15 | bar  14.34 | bar33  14.27 | bar65  14.34
+router   m=32 cublas  20.58 | plan (66, 0) exc=0 comp=False | ours  16.13 | noRed   9.38 | bar  16.06 | bar33  16.42 | bar65  16.10
+diag took 30.7s

@@ -1,0 +1,21 @@
+/opt/sglang/lib/python3.12/site-packages/torch/cuda/graphs.py:630: UserWarning: The CUDA Graph is empty. This usually means that the graph was attempted to be captured on wrong device or stream. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/cuda/CUDAGraph.cpp:249.)
+  super().capture_end_pre()
+empty graph 2.98
+qkv_gate m= 1 plan=(7, 0) t= 20.00 ts= 20.10 start-skew  0.26 | x  1.54/ 1.79 | loop  9.22/ 9.98 | part  9.98/10.75 | exc 10.50/11.26 | sync 13.06/13.31 | end 14.08/14.59
+qkv_gate m= 8 plan=(7, 0) t= 20.86 ts= 21.22 start-skew  0.00 | x  1.28/ 1.54 | loop  9.22/10.24 | part  9.98/10.75 | exc 10.75/11.52 | sync 13.31/13.82 | end 14.85/15.36
+qkv_gate m=32 plan=(7, 0) t= 25.38 ts= 25.54 start-skew  0.26 | x  2.30/ 2.30 | loop 10.75/11.26 | part 11.26/12.03 | exc 12.80/13.57 | sync 15.62/16.38 | end 19.20/19.97
+o        m= 1 plan=(1, 1) t= 13.89 ts= 13.95 start-skew  0.00 | x  1.28/ 1.28 | loop  6.66/ 7.17 | part  7.42/ 7.68 | exc  7.94/ 8.19 | end  7.94/ 8.45
+o        m= 1 plan=(2, 2) t= 13.60 ts= 13.70 start-skew  0.26 | x  1.02/ 1.02 | loop  5.12/ 5.63 | part  5.63/ 6.14 | exc  6.14/ 6.66 | sync  6.91/ 7.17 | dsm  7.42/ 7.68 | end  7.94/ 8.19
+o        m= 8 plan=(1, 1) t= 14.08 ts= 14.24 start-skew  0.00 | x  1.02/ 1.28 | loop  6.66/ 7.17 | part  7.17/ 7.68 | exc  7.94/ 8.45 | end  8.19/ 8.70
+o        m= 8 plan=(2, 2) t= 14.43 ts= 14.53 start-skew  0.00 | x  1.02/ 1.28 | loop  5.12/ 5.63 | part  5.89/ 6.14 | exc  6.66/ 7.17 | sync  7.17/ 7.68 | dsm  7.94/ 8.45 | end  8.45/ 8.96
+o        m=32 plan=(2, 2) t= 18.37 ts= 18.78 start-skew  0.00 | x  1.28/ 1.28 | loop  5.89/ 6.40 | part  6.66/ 6.91 | exc  7.94/ 9.73 | sync  8.45/10.24 | dsm 11.78/12.54 | end 12.29/12.80
+pooler   m= 1 plan=(4, 0) t= 26.18 ts= 26.37 start-skew  0.00 | x  1.28/ 1.54 | loop 14.59/15.87 | part 15.36/16.38 | exc 16.13/17.15 | sync 18.69/19.71 | end 19.46/20.74
+pooler   m= 8 plan=(4, 0) t= 26.78 ts= 26.94 start-skew  0.00 | x  1.54/ 1.54 | loop 14.85/15.87 | part 15.62/16.90 | exc 16.38/17.41 | sync 19.46/20.74 | end 20.74/21.76
+pooler   m=32 plan=(4, 0) t= 31.84 ts= 31.14 start-skew  0.00 | x  2.82/ 2.82 | loop 16.64/17.66 | part 17.66/18.69 | exc 19.20/20.22 | sync 22.53/23.30 | end 24.83/25.86
+unpooler m= 1 plan=(16, 0) t= 12.96 ts= 13.06 start-skew  0.00 | x  0.77/ 1.02 | loop  3.07/ 3.33 | part  3.58/ 3.84 | exc  4.10/ 4.35 | sync  6.14/ 6.40 | end  7.17/ 7.42
+unpooler m= 8 plan=(16, 0) t= 14.21 ts= 14.43 start-skew  0.26 | x  1.02/ 1.28 | loop  3.07/ 3.58 | part  3.58/ 3.84 | exc  4.61/ 5.12 | sync  6.91/ 7.42 | end  8.19/ 8.70
+unpooler m=32 plan=(2, 2) t= 29.28 ts= 29.44 start-skew  0.26 | x  2.82/ 3.07 | loop 16.90/18.18 | part 17.66/18.69 | exc 19.46/20.48 | sync 20.22/20.99 | dsm 23.30/23.30 | end 23.81/23.81
+router   m= 1 plan=(66, 0) t= 12.99 ts= 13.22 start-skew  0.26 | x  1.02/ 1.02 | loop  3.07/ 3.33 | part  3.58/ 3.58 | exc  3.58/ 3.84 | sync  5.63/ 5.89 | end  7.17/ 7.42
+router   m= 8 plan=(66, 0) t= 14.08 ts= 14.30 start-skew  0.00 | x  1.02/ 1.02 | loop  3.07/ 3.33 | part  3.58/ 3.84 | exc  3.84/ 3.84 | sync  5.89/ 5.89 | end  8.19/ 8.45
+router   m=32 plan=(66, 0) t= 16.22 ts= 16.54 start-skew  0.26 | x  1.28/ 1.54 | loop  3.58/ 4.10 | part  4.35/ 4.35 | exc  4.86/ 5.12 | sync  7.17/ 7.42 | end 10.50/10.75
+diag took 30.5s

@@ -1,0 +1,2 @@
+{"128:o": [{}, {"cfg":{"stages":6}}], "128:unpooler": [{}, {"cfg":{"stages":6}}], "128:pooler": [{}],
+ "256:o": [{}, {"cfg":{"stages":4}}], "256:unpooler": [{}, {"cfg":{"stages":4}}], "130:unpooler": [{}]}

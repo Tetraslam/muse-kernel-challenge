@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/tmp/muse_bf16_proj-waet_3l2/run/worker.py", line 423, in child_main
+    send(_setup_op(msg, module, state, sync, perf))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/muse_bf16_proj-waet_3l2/run/worker.py", line 322, in _setup_op
+    state["prep"] = prepare(weights)
+                    ^^^^^^^^^^^^^^^^
+  File "/tmp/muse_bf16_proj-waet_3l2/run/submission.py", line 749, in prepare
+    _diag(weights, state)
+  File "/tmp/muse_bf16_proj-waet_3l2/run/submission.py", line 692, in _diag
+    ptr = p["ptr"]
+          ~^^^^^^^
+KeyError: 'ptr'

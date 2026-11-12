@@ -1,0 +1,32 @@
+/opt/sglang/lib/python3.12/site-packages/torch/cuda/graphs.py:630: UserWarning: The CUDA Graph is empty. This usually means that the graph was attempted to be captured on wrong device or stream. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/cuda/CUDAGraph.cpp:249.)
+  super().capture_end_pre()
+empty graph 3.10
+stream   6MB   7.30   7.26   7.20   7.49
+stream   8MB   8.19   8.16   7.87   7.84
+stream  12MB   9.31   9.34   8.70   8.77
+stream  16MB  10.59  10.56   9.76   9.79
+stream  28MB  14.11  13.98  12.86  12.70
+stream  38MB  16.86  16.86  15.30  15.26
+stream  50MB  20.45  20.42  18.21  18.30
+stream  67MB  24.99  25.02  22.11  22.14
+qkv_gate m= 1 cublas  18.37 | S=  7 | ours  23.46 | noRed  19.52 | loads  16.61 | pf2  23.07 | pf8  23.04 | S/2  37.44 | S*2  19.78 | S1  91.10
+qkv_gate m= 8 cublas  18.40 | S=  7 | ours  26.46 | noRed  19.52 | loads  16.61 | pf2  26.43 | pf8  26.14 | S/2  40.80 | S*2  22.88 | S1  94.21
+qkv_gate m=16 cublas  18.21 | S=  7 | ours  30.59 | noRed  19.81 | loads  16.83 | pf2  30.78 | pf8  30.14 | S/2  44.96 | S*2  27.23 | S1 ERR x slice does not fit in shared
+qkv_gate m=32 cublas  18.72 | S=  7 | ours  41.79 | noRed  21.12 | loads  16.64 | pf2  41.95 | pf8  41.38 | S/2  58.50 | S*2  40.67 | S1 ERR x slice does not fit in shared
+o        m= 1 cublas  10.88 | S=  2 | ours  17.63 | noRed  11.90 | loads  10.53 | pf2  17.79 | pf8  17.50 | S/2  22.21 | S*2  17.63 | S1  22.53
+o        m= 8 cublas  10.66 | S=  2 | ours  20.06 | noRed  11.90 | loads  10.62 | pf2  20.10 | pf8  19.33 | S/2  24.77 | S*2  20.00 | S1  24.70
+o        m=16 cublas  10.62 | S=  2 | ours  22.56 | noRed  11.97 | loads  10.46 | pf2  22.37 | pf8  22.43 | S/2  26.43 | S*2  21.89 | S1  26.43
+o        m=32 cublas  10.75 | S=  2 | ours  33.06 | noRed  12.48 | loads  10.46 | pf2  33.18 | pf8  32.96 | S/2  37.15 | S*2  33.44 | S1  37.22
+pooler   m= 1 cublas  25.63 | S=  4 | ours  34.82 | noRed  29.31 | loads  25.12 | pf2  33.79 | pf8  33.15 | S/2  52.58 | S*2  27.04 | S1  92.58
+pooler   m= 8 cublas  25.22 | S=  4 | ours  37.02 | noRed  29.41 | loads  25.06 | pf2  36.54 | pf8  36.67 | S/2  55.10 | S*2  29.79 | S1  95.36
+pooler   m=16 cublas  25.15 | S=  4 | ours  40.38 | noRed  29.76 | loads  25.02 | pf2  40.00 | pf8  39.68 | S/2  59.87 | S*2  33.89 | S1 ERR x slice does not fit in shared
+pooler   m=32 cublas  25.25 | S=  4 | ours  52.54 | noRed  31.46 | loads  24.93 | pf2  52.67 | pf8  52.03 | S/2 ERR x slice does not fit in shared | S*2  46.43 | S1 ERR x slice does not fit in shared
+unpooler m= 1 cublas  11.26 | S= 16 | ours  12.42 | noRed   8.70 | loads   7.87 | pf2  12.58 | pf8  12.77 | S/2  14.21 | S*2  11.94 | S1  49.98
+unpooler m= 8 cublas  11.49 | S= 16 | ours  16.06 | noRed   8.86 | loads   8.06 | pf2  16.38 | pf8  16.38 | S/2  17.60 | S*2  15.78 | S1  53.12
+unpooler m=16 cublas  22.66 | S=  2 | ours  41.38 | noRed  29.63 | loads  24.61 | pf2  40.83 | pf8  40.61 | S/2  60.83 | S*2  34.08 | S1  60.58
+unpooler m=32 cublas  22.66 | S=  2 | ours  54.72 | noRed  31.14 | loads  24.54 | pf2  55.23 | pf8  55.01 | S/2 ERR x slice does not fit in shared | S*2  48.19 | S1 ERR x slice does not fit in shared
+router   m= 1 cublas  15.07 | S= 66 | ours  10.98 | noRed   8.67 | loads   8.29 | pf2  11.17 | pf8  11.07 | S/2  12.03 | S*2  11.20 | S1 ERR x slice does not fit in shared
+router   m= 8 cublas  30.98 | S= 66 | ours  11.17 | noRed   8.58 | loads   8.29 | pf2  11.49 | pf8  11.26 | S/2  12.19 | S*2  11.84 | S1 ERR x slice does not fit in shared
+router   m=16 cublas  20.70 | S= 66 | ours  12.35 | noRed   8.80 | loads   8.35 | pf2  12.61 | pf8  12.58 | S/2  12.90 | S*2  13.54 | S1 ERR x slice does not fit in shared
+router   m=32 cublas  20.70 | S= 66 | ours  15.71 | noRed   9.22 | loads   8.42 | pf2  15.39 | pf8  15.78 | S/2  15.26 | S*2  18.11 | S1 ERR x slice does not fit in shared
+diag took 31.3s

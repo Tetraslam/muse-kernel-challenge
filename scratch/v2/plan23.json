@@ -1,0 +1,4 @@
+{"1:qkv_gate": [{}], "1:o": [{}], "1:pooler": [{}], "1:unpooler": [{}], "1:router": [{}],
+ "8:qkv_gate": [{}], "8:o": [{}], "8:pooler": [{}], "8:unpooler": [{}], "8:router": [{}],
+ "16:pooler": [{}], "32:router": [{}], "128:qkv_gate": [{}], "256:router": [{}],
+ "7:pooler": [{}], "5:unpooler": [{}], "9:router": [{}], "33:o": [{}]}

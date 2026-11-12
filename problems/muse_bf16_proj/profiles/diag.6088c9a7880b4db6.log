@@ -1,0 +1,38 @@
+max co-resident clusters of 2 (m=1, qkv S=c): 66
+max co-resident clusters of 4 (m=1, qkv S=c): 30
+max co-resident clusters of 7 (m=1, qkv S=c): 15
+max co-resident clusters of 8 (m=1, qkv S=c): 15
+max co-resident clusters of 14 (m=1, qkv S=c): 7
+max co-resident clusters of 16 (m=1, qkv S=c): 7
+/opt/sglang/lib/python3.12/site-packages/torch/cuda/graphs.py:630: UserWarning: The CUDA Graph is empty. This usually means that the graph was attempted to be captured on wrong device or stream. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/cuda/CUDAGraph.cpp:249.)
+  super().capture_end_pre()
+empty graph 3.04
+stream   6MB   7.33   7.36   7.23   7.46
+stream   8MB   8.38   8.19   7.90   7.90
+stream  12MB   9.44   9.44   9.06   8.96
+stream  16MB  10.56  10.59   9.82   9.79
+stream  28MB  14.18  14.21  12.83  12.80
+stream  38MB  17.09  17.12  15.23  15.23
+stream  50MB  20.58  20.54  18.24  18.14
+stream  67MB  25.31  25.28  22.14  22.37
+qkv_gate m= 1 cublas  18.88 | plan S=7 C=1 exc=1316 | ours  18.82 | noRed  15.36 | atomic  18.85 | S*2  31.90
+qkv_gate m= 8 cublas  18.66 | plan S=7 C=1 exc=1316 | ours  22.21 | noRed  15.33 | atomic  22.18 | S*2  32.61
+qkv_gate m=16 cublas  18.24 | plan S=7 C=1 exc=1316 | ours  27.55 | noRed  15.39 | atomic  27.65 | S*2  34.34
+qkv_gate m=32 cublas  18.50 | plan S=7 C=1 exc=1316 | ours  38.53 | noRed  16.00 | atomic  38.18 | S*2  38.85
+o        m= 1 cublas  10.50 | plan S=2 C=2 exc=796 | ours  14.02 | noRed  10.94 | atomic  15.55 | S/2  14.46 | S*2  22.37
+o        m= 8 cublas  10.69 | plan S=2 C=2 exc=796 | ours  14.24 | noRed  10.88 | atomic  19.23 | S/2  15.23 | S*2  22.69
+o        m=16 cublas  10.78 | plan S=2 C=2 exc=796 | ours  15.23 | noRed  10.91 | atomic  22.56 | S/2  17.09 | S*2  23.81
+o        m=32 cublas  11.07 | plan S=2 C=2 exc=796 | ours  18.02 | noRed  11.58 | atomic  33.76 | S/2  21.22 | S*2  28.58
+pooler   m= 1 cublas  25.31 | plan S=4 C=2 exc=2267 | ours  26.43 | noRed  21.02 | atomic  24.80 | S/2  32.06 | S*2  37.25
+pooler   m= 8 cublas  25.31 | plan S=4 C=2 exc=2267 | ours  27.36 | noRed  21.18 | atomic  28.32 | S/2  35.04 | S*2  37.79
+pooler   m=16 cublas  25.28 | plan S=4 C=2 exc=2267 | ours  29.47 | noRed  21.15 | atomic  33.50 | S/2  39.07 | S*2  38.88
+pooler   m=32 cublas  25.92 | plan S=4 C=2 exc=2267 | ours  36.90 | noRed  22.18 | atomic  45.02 | S/2 ERR x slice does not fit in shared memory | S*2  43.62
+unpooler m= 1 cublas  11.52 | plan S=16 C=2 exc=3244 | ours  13.34 | noRed   8.70 | atomic  12.32 | S/2  12.86
+unpooler m= 8 cublas  11.52 | plan S=16 C=2 exc=3244 | ours  14.75 | noRed   8.93 | atomic  16.48 | S/2  16.10
+unpooler m=16 cublas  22.21 | plan S=2 C=2 exc=3244 | ours  26.18 | noRed  21.63 | atomic  32.99 | S/2  33.44 | S*2  38.30
+unpooler m=32 cublas  22.37 | plan S=2 C=2 exc=3244 | ours  29.44 | noRed  22.50 | atomic  44.93 | S/2 ERR x slice does not fit in shared memory | S*2  44.93
+router   m= 1 cublas  15.23 | plan S=64 C=2 exc=0 | ours  12.19 | noRed   8.61 | atomic  11.10 | S/2  11.23
+router   m= 8 cublas  30.66 | plan S=64 C=2 exc=0 | ours  14.18 | noRed   8.61 | atomic  15.90 | S/2  14.50
+router   m=16 cublas  20.29 | plan S=64 C=2 exc=0 | ours  17.41 | noRed   8.80 | atomic  21.79 | S/2  18.69
+router   m=32 cublas  21.12 | plan S=64 C=2 exc=0 | ours  23.90 | noRed   9.28 | atomic  33.44 | S/2  27.14
+diag took 31.2s

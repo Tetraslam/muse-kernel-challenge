@@ -1,0 +1,2 @@
+{"128:o": [{}, {"cfg":{"stages":6}}, {"cfg":{"S":1}}], "128:unpooler": [{}, {"cfg":{"stages":6}}], "128:pooler": [{}, {"cfg":{"stages":6}}], "128:qkv_gate": [{}, {"cfg":{"S":6}}],
+ "256:o": [{}, {"cfg":{"stages":4}}], "256:unpooler": [{}], "256:pooler": [{}], "256:qkv_gate": [{}], "130:unpooler": [{}], "200:qkv_gate": [{}]}

@@ -1,0 +1,24 @@
+/opt/sglang/lib/python3.12/site-packages/torch/cuda/graphs.py:630: UserWarning: The CUDA Graph is empty. This usually means that the graph was attempted to be captured on wrong device or stream. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/cuda/CUDAGraph.cpp:249.)
+  super().capture_end_pre()
+empty graph 3.07
+qkv_gate m= 1 cublas  17.73 | plan S=7 C=1 exc=1277 | ours  18.69 | noRed  15.26 | noExc  18.56 | atomic  18.91 | evenC2  20.48 | S*2  30.27
+qkv_gate m= 8 cublas  18.40 | plan S=7 C=1 exc=1277 | ours  22.27 | noRed  15.84 | noExc  21.34 | atomic  22.27 | evenC2  22.14 | S*2  33.34
+qkv_gate m=16 cublas  18.62 | plan S=7 C=1 exc=1277 | ours  27.07 | noRed  15.94 | noExc  25.44 | atomic  26.98 | evenC2  24.99 | S*2  37.31
+qkv_gate m=32 cublas  18.78 | plan S=7 C=1 exc=1277 | ours  39.04 | noRed  16.64 | noExc  34.30 | atomic  38.78 | evenC2  34.27 | S*2  48.93
+o        m= 1 cublas  10.78 | plan S=2 C=2 exc=823 | ours  13.38 | noRed  11.17 | noExc  13.06 | atomic  16.10 | S/2  13.89 | S*2  20.90
+o        m= 8 cublas  10.50 | plan S=2 C=2 exc=823 | ours  14.72 | noRed  11.26 | noExc  13.25 | atomic  19.71 | S/2  15.36 | S*2  22.91
+o        m=16 cublas  10.62 | plan S=2 C=2 exc=823 | ours  16.10 | noRed  11.36 | noExc  13.89 | atomic  23.01 | S/2  16.80 | S*2  26.24
+o        m=32 cublas  10.85 | plan S=2 C=2 exc=823 | ours  19.94 | noRed  11.90 | noExc  15.33 | atomic  33.66 | S/2  23.84 | S*2  33.06
+pooler   m= 1 cublas  24.93 | plan S=4 C=2 exc=2269 | ours  26.40 | noRed  21.50 | noExc  26.24 | atomic  25.31 | S/2  32.45 | S*2  35.90
+pooler   m= 8 cublas  25.28 | plan S=4 C=2 exc=2269 | ours  28.70 | noRed  21.73 | noExc  27.49 | atomic  28.54 | S/2  35.49 | S*2  38.37
+pooler   m=16 cublas  25.15 | plan S=4 C=2 exc=2269 | ours  31.39 | noRed  21.82 | noExc  28.99 | atomic  32.90 | S/2  40.61 | S*2  42.66
+pooler   m=32 cublas  25.70 | plan S=4 C=2 exc=2269 | ours  42.88 | noRed  22.85 | noExc  35.39 | atomic  47.39 | S/2 ERR x slice does not fit in shared memory | S*2  53.98
+unpooler m= 1 cublas  11.52 | plan S=16 C=2 exc=3256 | ours  13.18 | noRed   9.06 | noExc  12.86 | atomic  12.35 | S/2  12.80
+unpooler m= 8 cublas  11.52 | plan S=16 C=2 exc=3256 | ours  15.14 | noRed   9.22 | noExc  14.56 | atomic  16.45 | S/2  15.94
+unpooler m=16 cublas  22.40 | plan S=2 C=2 exc=3256 | ours  27.30 | noRed  21.82 | noExc  24.29 | atomic  33.66 | S/2  34.91 | S*2  40.96
+unpooler m=32 cublas  22.50 | plan S=2 C=2 exc=3256 | ours  38.40 | noRed  22.72 | noExc  26.11 | atomic  50.30 | S/2 ERR x slice does not fit in shared memory | S*2  56.67
+router   m= 1 cublas  14.98 | plan S=64 C=2 exc=0 | ours  12.35 | noRed   8.61 | noExc  12.26 | atomic  11.46 | S/2  11.49
+router   m= 8 cublas  31.46 | plan S=64 C=2 exc=0 | ours  14.40 | noRed   8.64 | noExc  14.46 | atomic  16.06 | S/2  14.40
+router   m=16 cublas  20.83 | plan S=64 C=2 exc=0 | ours  17.34 | noRed   8.90 | noExc  17.31 | atomic  21.57 | S/2  18.46
+router   m=32 cublas  20.86 | plan S=64 C=2 exc=0 | ours  23.55 | noRed   9.28 | noExc  23.58 | atomic  33.15 | S/2  27.14
+diag took 36.4s

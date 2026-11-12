@@ -1,0 +1,12 @@
+/opt/sglang/lib/python3.12/site-packages/torch/cuda/graphs.py:630: UserWarning: The CUDA Graph is empty. This usually means that the graph was attempted to be captured on wrong device or stream. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/cuda/CUDAGraph.cpp:249.)
+  super().capture_end_pre()
+empty graph 3.01
+qkv_gate m=1 cublas  17.63 | split(7, 0)  19.94 | gemv1  22.56 | gemv2  27.46 | gemv4  44.86
+qkv_gate m=8 cublas  18.24 | split(7, 0)  21.02 | gemv1  27.10 | gemv2  34.30 | gemv4  55.10
+o        m=1 cublas  10.59 | split(2, 2)  13.86 | gemv1  12.83 | gemv2  12.32 | gemv4  13.34
+o        m=8 cublas  10.53 | split(2, 2)  14.62 | gemv1  15.58 | gemv2  14.05 | gemv4  16.03
+pooler   m=1 cublas  25.22 | split(4, 0)  26.08 | gemv1  25.31 | gemv2  29.18 | gemv4  45.34
+pooler   m=8 cublas  24.93 | split(4, 0)  26.62 | gemv1  30.98 | gemv2  37.54 | gemv4  57.41
+unpooler m=1 cublas  11.26 | split(16, 0)  13.02 | gemv1  12.10 | gemv2  16.45 | gemv4  25.76
+unpooler m=8 cublas  11.55 | split(16, 0)  14.18 | gemv1  17.12 | gemv2  21.76 | gemv4  32.58
+diag took 30.1s

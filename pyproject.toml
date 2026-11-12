@@ -7,7 +7,11 @@ authors = [
     { name = "Shresht Bhowmick", email = "bhowmickshresht@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "numpy>=2.5.4",
+    "torch>=2.14.1",
+    "triton>=3.8.0",
+]
 
 [project.scripts]
 muse-kernel-challenge = "muse_kernel_challenge:main"
